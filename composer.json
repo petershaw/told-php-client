@@ -11,7 +11,7 @@
 
     },
     "autoload": {
-        "psr-0": { "opentabs\\told": "" }
+        "psr-0": { "petershaw\\told": "" }
     },
-    "target-dir": "opentabs/told"
+    "target-dir": "petershaw/told"
 }
