@@ -1,0 +1,17 @@
+{
+    "name": "petershaw/told-client",
+    "description": "A client to log messages to the told server.",
+    "authors": [
+        {
+        	"name": "Peter Shaw", 
+            "email": "unthoughted@googlemail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": { "opentabs\\told": "" }
+    },
+    "target-dir": "opentabs/told",
+}
