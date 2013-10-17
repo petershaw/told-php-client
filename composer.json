@@ -13,5 +13,5 @@
     "autoload": {
         "psr-0": { "petershaw\\told": "" }
     },
-    "target-dir": "petershaw/told"
+    "target-dir": ""
 }
