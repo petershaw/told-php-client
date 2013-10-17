@@ -13,5 +13,5 @@
     "autoload": {
         "psr-0": { "opentabs\\told": "" }
     },
-    "target-dir": "opentabs/told",
+    "target-dir": "opentabs/told"
 }
