@@ -1,9 +1,6 @@
 told-php-client
 ==========
-<!-- 
-[![Build Status](https://travis-ci.org/petershaw/told-nodejs-client.png?branch=master)](https://travis-ci.org/petershaw/told-nodejs-client)
-[![NPM version](https://badge.fury.io/js/told-nodejs-client.png)](http://badge.fury.io/js/told-nodejs-client)
- -->
+[![Build Status](https://travis-ci.org/petershaw/told-php-client.png?branch=0.0.1)](https://travis-ci.org/petershaw/told-php-client)
 ---
 
  A client to log messates into a told log recorder.
