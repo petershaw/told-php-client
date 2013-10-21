@@ -56,6 +56,7 @@ First of all you have to initiate the Client with a few minimal configurations. 
 The 'host' parameter is **mandatory**.!
 Optional parameters are: type, tags, defaulttage and debug.
 
+| tag | Description |
 | ------	| ------	|  
 |type | Describes the type of this log message. Choose the type wisely, because you will group by type at the administration frontend. |  
 |tags |   These tags will be send ALWAYS right next to the tags that are send by the call it self. It is a good decision to add your application-id and maybe customer-id as tags. |  
