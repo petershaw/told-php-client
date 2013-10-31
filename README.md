@@ -51,6 +51,7 @@ First of all you have to initiate the Client with a few minimal configurations. 
 ```php
      $told = new ToldClient();
      $told->setHost("test://told.my-domain.com");
+     $told->setType("Application Name");
 ```
 
 The 'host' parameter is **mandatory**.!

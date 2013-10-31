@@ -46,6 +46,7 @@ class ToldClientTest extends \PHPUnit_Framework_TestCase {
 
     public function testStringTags() {
         $this->object = new ToldClient();
+        $this->object->setHost("test://example.com");
         $msg = $this->object->tell("test", "type", "Honigkuchen");
         $this->assertEquals(1, count($msg->tags));
         $this->assertTrue(in_array('Honigkuchen', $msg->tags));
@@ -53,6 +54,7 @@ class ToldClientTest extends \PHPUnit_Framework_TestCase {
 
     public function testArrayTags() {
         $this->object = new ToldClient();
+        $this->object->setHost("test://example.com");
         $msg = $this->object->tell("test", "type", Array("Honigkuchen", "Zuckerschlecken"));
         $this->assertEquals(2, count($msg->tags));
         $this->assertTrue(in_array('Honigkuchen', $msg->tags));
@@ -80,11 +82,20 @@ class ToldClientTest extends \PHPUnit_Framework_TestCase {
 
     public function testSimpleMessageString() {
         $this->object = new ToldClient();
+        $this->object->setHost("test://example.com");
         $msg = $this->object->tell("I am a string.");
         $this->assertTrue(is_object($msg->message) || is_string($msg->message));
         //$this->assertEquals("I am a string.", $msg->message->said);
     }
 
+     /**
+     * @expectedException Exception
+     */
+    public function testThowExeptionOnMissingHost() {
+         $this->object = new ToldClient();
+         $this->object->tell("fail without host.");
+    }
+    
     /**
       public function testRealSend(){
       $conf['host'] = "http://localhost:3000";

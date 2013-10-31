@@ -4,7 +4,7 @@ namespace petershaw\told;
 
 class ToldClient {
 
-    public static $VERSION = "0.0.1";
+    public static $VERSION = "0.0.3";
     public static $TRANSPORT = "http";
     private $host;
     private $debug = false;
@@ -32,6 +32,10 @@ class ToldClient {
         $this->host = $host;
     }
 
+    public function setType($type) {
+        $this->etype = $type;
+    }
+
     public function setDefaulttags($defaulttags) {
         if (is_array($defaulttags)) {
             $this->defaulttags = $defaulttags;
@@ -53,6 +57,15 @@ class ToldClient {
     }
 
     public function tell($message, $type = null, $tags = null) {
+
+        if (!isset($this->host) or empty($this->host)) {
+            if ($this->debug) {
+                echo("Host is not set.\n");
+                echo implode("\n", debug_backtrace());
+            }
+            throw new \Exception("Host not set");
+        }
+
         $mObj = clone $this->msg;
         // add default tags
         if (count($this->defaulttags) > 0) {
@@ -90,7 +103,7 @@ class ToldClient {
 
         if ($this->debug)
             echo("Sending message: " . var_export($mObj, true));
-        $curl = curl_init($this->host . "/log");
+        $curl = curl_init(rtrim($this->host, '/') . "/log");
         curl_setopt($curl, CURLOPT_VERBOSE, $this->debug);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($mObj));
