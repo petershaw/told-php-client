@@ -4,13 +4,13 @@ namespace petershaw\told;
 
 class ToldClient {
 
-    public static $VERSION = "0.0.3";
+    public static $VERSION = "0.0.4";
     public static $TRANSPORT = "http";
     private $host;
     private $debug = false;
     private $defaulttags = Array();
     private $tags = Array();
-    private $etype = null;
+    private $type = null;
     private $msg;
 
     function __set($name, $value) {
@@ -33,7 +33,7 @@ class ToldClient {
     }
 
     public function setType($type) {
-        $this->etype = $type;
+        $this->type = $type;
     }
 
     public function setDefaulttags($defaulttags) {

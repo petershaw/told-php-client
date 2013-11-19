@@ -79,6 +79,15 @@ class ToldClientTest extends \PHPUnit_Framework_TestCase {
         $msg = $this->object->tell("test");
         $this->assertEquals("unitttest", $msg->etype);
     }
+    
+    public function testSetType() {
+        $conf = Array();
+        $conf['host'] = "test://example.com";
+        $this->object = new ToldClient($conf);
+        $this->object->setType("unitttest");
+        $msg = $this->object->tell("test");
+        $this->assertEquals("unitttest", $msg->etype);
+    }
 
     public function testSimpleMessageString() {
         $this->object = new ToldClient();
